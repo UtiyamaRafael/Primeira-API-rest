@@ -20,13 +20,28 @@ app.get('/', (req, res) => {
 });
 
 // 6. Endpoint de informações
-app.get('/info', (req, res) => {
+app.get('/me', (req, res) => {
     res.json({
-        nome: 'Minha API REST',
-        versao: '1.0.0',
-        autor: 'Seu Nome'
+        nome: 'Rafael Utiyama',
+        curso: 'Ciencia da Computação',
+        hobbies: ["programar", "jogar", "ler"],
+        linguagens: ["JavaScript", "Python", "java", "C++"]
     });
 });
+
+app.get('/data', (req, res) => {
+    res.json({
+        data: new Date().toLocaleDateString(),
+        hora: new Date().toLocaleTimeString(),
+    })
+});
+
+app.get('/random', (req, res) => {
+    res.json({
+        numeroAleatorio: Math.floor(Math.random() * 100) + 1
+    })
+});
+
 
 // 7. Iniciar servidor
 app.listen(PORT, () => {
