@@ -1,0 +1,99 @@
+{
+  "info": {
+    "_postman_id": "d5978bc4-2ee4-4cf3-a0c9-c94ae0b8c587",
+    "name": "API livros",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53289322",
+    "_collection_link": "https://go.postman.co/collection/53289322-d5978bc4-2ee4-4cf3-a0c9-c94ae0b8c587?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar todos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"titulo\": \"teste\",\r\n    \"autor\": \"Rafael\",\r\n    \"ano\": 2005,\r\n    \"genero\": \"fantasia\",\r\n    \"nota\": 10\r\n}\r\n  ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/itens",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "itens"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtro genero",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Ordem titulo",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "ordem nota",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Paginacao",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Todos",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Busca ID",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Criar",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
