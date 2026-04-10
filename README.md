@@ -1,7 +1,8 @@
 # 📄 API Biblioteca de Livros
 
 API REST desenvolvida com Node.js e Express para gerenciar uma lista de livros.  
-A API permite listar, buscar e criar livros, incluindo filtros, ordenação, paginação e validações.
+A API permite listagem de livros, busca por ID, criação de novos livros, atualização de livros, remoção de livros além de filtros por gênero, 
+ordenação por título ou nota, paginação de resultados, validações de dados, tratamento de erros.
 
 ---
 
@@ -12,6 +13,8 @@ A API permite listar, buscar e criar livros, incluindo filtros, ordenação, pag
 | GET    | /api/itens       | Listar todos os livros     |
 | GET    | /api/itens/:id   | Buscar livro por ID        |
 | POST   | /api/itens       | Criar novo livro           |
+| PUT    | /api/itens/:id   | Atualizar livro            |
+| DELETE | /api/itens/:id   | Remover livro              |
 
 ---
 
@@ -72,25 +75,55 @@ Body: {
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e2726f9-814c-4067-b2de-c047f35514ee" />
 
----
 
-## 🔹 Funcionalidades
+# 🔹 3. PUT /api/itens
 
-A API permite:
-- Filtrar livros por gênero  
-- Ordenar por título ou nota  
-- Paginar resultados  
+### Atualização
+
+Header: Content-Type: application/json
+
+{
+  "titulo": "Novo título",
+  "autor": "Novo autor",
+  "ano": 2020,
+  "genero": "Drama",
+  "nota": 8.5
+}
+
+<img width="1908" height="987" alt="Captura de tela 2026-04-10 170752" src="https://github.com/user-attachments/assets/a82bff30-e14d-47f5-a1f9-940506bf8dcd" />
+
+
+# 🔹 3. DELETE /api/itens/1
+
+### Remover
+
+<img width="1919" height="992" alt="image" src="https://github.com/user-attachments/assets/4e946dc7-84ba-4e6f-b106-1718180a2867" />
 
 ---
 
 ## Validações
 
-- Todos os campos são obrigatórios (titulo, autor, ano, genero, nota)  
-- Tipos corretos (texto e número)  
-- Regras:
-  - ano > 0  
-  - nota entre 0 e 10  
+📌 Todos os campos são obrigatórios:
+- titulo  
+- autor  
+- ano  
+- genero  
+- nota  
 
+📏 Regras aplicadas:
+- titulo e autor → devem ser do tipo **string**  
+- genero → deve ser do tipo **string**  
+- ano → deve ser um **número maior que 0**  
+- nota → deve ser um **número entre 0 e 10**  
+
+⚠️ Observações:
+- Dados inválidos retornam erro **400 (Bad Request)**  
+- A API pode retornar um ou mais erros no formato:
+```json
+{
+  "erros": ["Erro 1", "Erro 2"]
+}
+```
 ---
 
 ## Tecnologias
